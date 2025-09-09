@@ -9,7 +9,7 @@
  */
 function formatDate(date, fromFormat, toFormat) {
   let result = '';
-  const splitDate = date.split(`${fromFormat[3]}`);
+  const splitDate = date.split(`${fromFormat[fromFormat.length - 1]}`);
   const dateObject = {};
 
   for (let i = 0; i < splitDate.length; i++) {
@@ -32,7 +32,7 @@ function formatDate(date, fromFormat, toFormat) {
     }
   }
 
-  result = temporaryArray.join(`${toFormat[3]}`);
+  result = temporaryArray.join(`${toFormat[toFormat.length - 1]}`);
 
   return result;
 }
